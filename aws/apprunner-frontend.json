@@ -19,7 +19,7 @@
           "Port": "3000",
           "RuntimeEnvironmentVariables": {
             "NODE_ENV": "production",
-            "NEXT_PUBLIC_API_URL": "https://55tbut7gea.eu-west-3.awsapprunner.com",
+            "NEXT_PUBLIC_API_URL": "https://pzewjkzfbh.eu-west-3.awsapprunner.com",
             "PORT": "3000",
             "HOSTNAME": "0.0.0.0"
           }
