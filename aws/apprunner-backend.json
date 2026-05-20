@@ -1,0 +1,40 @@
+{
+  "ServiceName": "tech-interventions-backend",
+  "SourceConfiguration": {
+    "AuthenticationConfiguration": {
+      "ConnectionArn": "arn:aws:apprunner:eu-west-3:012504445309:connection/github-tech-interventions/ee2c07d371bc49378f3599bec06f026f"
+    },
+    "CodeRepository": {
+      "RepositoryUrl": "https://github.com/24danielhack/tech-interventions",
+      "SourceCodeVersion": {
+        "Type": "BRANCH",
+        "Value": "main"
+      },
+      "CodeConfiguration": {
+        "ConfigurationSource": "API",
+        "CodeConfigurationValues": {
+          "Runtime": "NODEJS_22",
+          "BuildCommand": "cd backend && npm install && npm run build",
+          "StartCommand": "node backend/dist/main.js",
+          "Port": "3001",
+          "RuntimeEnvironmentVariables": {
+            "NODE_ENV": "production",
+            "DB_HOST": "tech-interventions-db.ct86imyakmj1.eu-west-3.rds.amazonaws.com",
+            "DB_PORT": "5432",
+            "DB_USERNAME": "admindb",
+            "DB_PASSWORD": "TechInt2024Secure",
+            "DB_NAME": "tech_interventions",
+            "JWT_SECRET": "jwt-secret-tech-interventions-2024-prod",
+            "JWT_REFRESH_SECRET": "jwt-refresh-secret-tech-interventions-2024-prod",
+            "API_PORT": "3001"
+          }
+        }
+      }
+    },
+    "AutoDeploymentsEnabled": true
+  },
+  "InstanceConfiguration": {
+    "Cpu": "1 vCPU",
+    "Memory": "2 GB"
+  }
+}

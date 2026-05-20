@@ -1,0 +1,35 @@
+{
+  "ServiceName": "tech-interventions-frontend",
+  "SourceConfiguration": {
+    "AuthenticationConfiguration": {
+      "ConnectionArn": "arn:aws:apprunner:eu-west-3:012504445309:connection/github-tech-interventions/ee2c07d371bc49378f3599bec06f026f"
+    },
+    "CodeRepository": {
+      "RepositoryUrl": "https://github.com/24danielhack/tech-interventions",
+      "SourceCodeVersion": {
+        "Type": "BRANCH",
+        "Value": "main"
+      },
+      "CodeConfiguration": {
+        "ConfigurationSource": "API",
+        "CodeConfigurationValues": {
+          "Runtime": "NODEJS_22",
+          "BuildCommand": "cd frontend && npm install && npm run build",
+          "StartCommand": "node frontend/.next/standalone/server.js",
+          "Port": "3000",
+          "RuntimeEnvironmentVariables": {
+            "NODE_ENV": "production",
+            "NEXT_PUBLIC_API_URL": "https://55tbut7gea.eu-west-3.awsapprunner.com",
+            "PORT": "3000",
+            "HOSTNAME": "0.0.0.0"
+          }
+        }
+      }
+    },
+    "AutoDeploymentsEnabled": true
+  },
+  "InstanceConfiguration": {
+    "Cpu": "1 vCPU",
+    "Memory": "2 GB"
+  }
+}
