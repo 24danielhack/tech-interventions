@@ -32,9 +32,10 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
         Alert,
         Report,
       ],
-      synchronize: this.configService.get('NODE_ENV') === 'development',
+      synchronize: true,
       logging: this.configService.get('NODE_ENV') === 'development',
       dropSchema: false,
+      ssl: this.configService.get('NODE_ENV') === 'production' ? { rejectUnauthorized: false } : false,
     };
   }
 }
