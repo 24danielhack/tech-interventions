@@ -1,0 +1,11 @@
+# Fichier .dockerignore Frontend
+node_modules
+npm-debug.log
+.next
+out
+.git
+.gitignore
+README.md
+.DS_Store
+.env
+.env.local
