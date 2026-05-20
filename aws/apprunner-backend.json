@@ -26,12 +26,20 @@
             "DB_NAME": "tech_interventions",
             "JWT_SECRET": "jwt-secret-tech-interventions-2024-prod",
             "JWT_REFRESH_SECRET": "jwt-refresh-secret-tech-interventions-2024-prod",
-            "API_PORT": "3001"
+            "API_PORT": "3001",
+            "FRONTEND_URL": "https://mzqejy5ksh.eu-west-3.awsapprunner.com"
           }
         }
       }
     },
     "AutoDeploymentsEnabled": true
+  },
+  "HealthCheckConfiguration": {
+    "Protocol": "TCP",
+    "Interval": 10,
+    "Timeout": 10,
+    "HealthyThreshold": 1,
+    "UnhealthyThreshold": 10
   },
   "InstanceConfiguration": {
     "Cpu": "1 vCPU",
